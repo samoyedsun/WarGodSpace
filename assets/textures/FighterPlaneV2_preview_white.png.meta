@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "14b9d167-24a8-4f22-89bb-f05209020f3f",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1000,
+  "height": 900,
+  "platformSettings": {},
+  "subMetas": {
+    "FighterPlaneV2_preview_white": {
+      "ver": "1.0.4",
+      "uuid": "7fbb8c9c-7897-4977-ae26-01c6a36043ff",
+      "rawTextureUuid": "14b9d167-24a8-4f22-89bb-f05209020f3f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -13.5,
+      "trimX": 0,
+      "trimY": 27,
+      "width": 1000,
+      "height": 873,
+      "rawWidth": 1000,
+      "rawHeight": 900,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
