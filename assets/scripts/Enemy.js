@@ -38,7 +38,7 @@ cc.Class({
 
         this.schedule(function(){
             this.room.spawnNewBullet(this.getNewBulletPosition(0), 'enemy');
-        }, Math.floor(Math.random() * 10));
+        }, Math.floor(Math.random() * 20) + 1);
     },
 
     getNewBulletPosition (offset) {
@@ -53,7 +53,7 @@ cc.Class({
 
         var minY = -this.node.parent.height/2 + this.node.height/2;
         if (enemyPos.y < minY) {
-            //this.onLost();
+            this.onLost();
         };
     },
 
@@ -74,7 +74,8 @@ cc.Class({
 
     onCollisionEnter (other, self) {
         if (other.name.search('bullet') != -1 && other.node.getComponent('Bullet').kind == 'Player') {
-            let lifeProgress = this.node.getChildByName('enemy_life_progress_bar').getComponent(cc.ProgressBar).progress - 0.1;
+            let hurtBlood = 100 / (this.node.height + this.node.width + 300);
+            let lifeProgress = this.node.getChildByName('enemy_life_progress_bar').getComponent(cc.ProgressBar).progress - hurtBlood;
             if (lifeProgress <= 0) {
                 this.onPicked();
             }

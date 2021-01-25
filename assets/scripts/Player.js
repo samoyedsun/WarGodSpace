@@ -97,7 +97,7 @@ cc.Class({
             this.node.parent.getComponent('SceneRoom').subScore();
         }
         if (other.name.search('enemy') != -1) {
-            this.node.parent.getComponent('SceneRoom').subScore();
+            this.node.parent.getComponent('SceneRoom').gameOver();
         }
     }
 });

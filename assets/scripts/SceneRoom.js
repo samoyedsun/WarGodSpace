@@ -103,10 +103,10 @@ cc.Class({
                 }
             });
 
-            bundle.load('p_menu_pl', cc.SpriteAtlas, function (err, atlas) {
-                let frame = atlas.getSpriteFrame('plane_yxjm_img_kzt');
-                self.node.getChildByName('plane_yxjm_img_kzt').getComponent(cc.Sprite).spriteFrame = frame;
-            });
+            //bundle.load('p_menu_pl', cc.SpriteAtlas, function (err, atlas) {
+                // let frame = atlas.getSpriteFrame('plane_yxjm_img_kzt');
+                // self.node.getChildByName('plane_yxjm_img_kzt').getComponent(cc.Sprite).spriteFrame = frame;
+            //});
         });
     
         cc.assetManager.loadBundle('audio', (err, bundle) => {
@@ -145,7 +145,9 @@ cc.Class({
     },
 
     onDestroy () {
-        // cc.loader.releaseRes('plist/plane')
+        cc.assetManager.getBundle("plist").releaseAll();
+        cc.assetManager.getBundle("audio").releaseAll();
+        cc.assetManager.getBundle("prefab").releaseAll();
     },
 
     start () {
@@ -241,6 +243,7 @@ cc.Class({
 
     gameOver () {
         this.player.stopAllActions();
+        cc.audioEngine.stopAll();
         cc.director.loadScene('Loading');
     }
 });

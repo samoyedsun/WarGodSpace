@@ -22,7 +22,7 @@ cc.Class({
     start () {
         this.animation = this.node.getComponent(cc.Animation);
         this.creatorAnimation(0, 'showAni')
-        this.animation.play('showAni');
+        let state = this.animation.play('showAni');
         this.animation.on('play', this.onAnimPlayListener, this);
         this.animation.on('finished', this.onAnimFinishedListener, this);
     },
