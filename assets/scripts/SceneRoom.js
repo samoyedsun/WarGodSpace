@@ -82,6 +82,12 @@ cc.Class({
             default: null,
             type: cc.Prefab
         },
+
+        msgBoxPrefab: {
+            visible: false,
+            default: null,
+            type: cc.Prefab
+        },
     },
 
     onLoad () {
@@ -141,33 +147,43 @@ cc.Class({
             bundle.load('blast_effect', cc.Prefab, function (err, prefab) {
                 self.blastEffectPrefab = prefab;
             });
+            bundle.load('msg_box_bg', cc.Prefab, function (err, prefab) {
+                self.msgBoxPrefab = prefab;
+            });
         });
     },
 
     onDestroy () {
+        this.player.stopAllActions();
+        cc.audioEngine.stopAll();
+
         cc.assetManager.getBundle("plist").releaseAll();
         cc.assetManager.getBundle("audio").releaseAll();
         cc.assetManager.getBundle("prefab").releaseAll();
     },
 
     start () {
-        this.schedule(function(){
-            if (this.bulletSpriteFrameList.length == 86) {
-                this.spawnNewEnemy(this.getNewEnemyPosition());
-            }
-        }, 0.5);
-        this.schedule(function(){
-            if (this.enemySpriteFrameList.length == 23) {
-                this.spawnNewBullet(this.player.getComponent('Player').getNewBulletPosition(-50), 'Player');
-                this.spawnNewBullet(this.player.getComponent('Player').getNewBulletPosition(50), 'Player');
-                if (this.biuAudio) {
-                    cc.audioEngine.play(this.biuAudio, false, 0.5);
-                }
-            }
-        }, 0.1); // player应该也是enemy
+        this.schedule(this.handleSpawnNewBulletSchedule, 0.5);
+        this.schedule(this.handleSpawnNewEnemySchedule, 0.1); // player应该也是enemy
 
         this.backGroundList[0].y = 0;
         this.backGroundList[1].y = - (this.backGroundList[0].height / 2 + this.backGroundList[1].height / 2);
+    },
+
+    handleSpawnNewBulletSchedule () {
+        if (this.bulletSpriteFrameList.length == 86) {
+            this.spawnNewEnemy(this.getNewEnemyPosition());
+        }
+    },
+
+    handleSpawnNewEnemySchedule () {
+        if (this.enemySpriteFrameList.length == 23) {
+            this.spawnNewBullet(this.player.getComponent('Player').getNewBulletPosition(-50), 'Player');
+            this.spawnNewBullet(this.player.getComponent('Player').getNewBulletPosition(50), 'Player');
+            if (this.biuAudio) {
+                cc.audioEngine.play(this.biuAudio, false, 0.5);
+            }
+        }
     },
 
     spawnNewEnemy (spawnPos) {
@@ -242,8 +258,11 @@ cc.Class({
     },
 
     gameOver () {
-        this.player.stopAllActions();
-        cc.audioEngine.stopAll();
-        cc.director.loadScene('Loading');
+        this.unschedule(this.handleSpawnNewEnemySchedule);
+        this.unschedule(this.handleSpawnNewBulletSchedule);
+
+        let newMsgBox = cc.instantiate(this.msgBoxPrefab);
+        this.node.addChild(newMsgBox);
+        newMsgBox.getComponent('MsgBox').room = this;
     }
 });

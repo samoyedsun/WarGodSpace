@@ -31,10 +31,8 @@ cc.Class({
 
         let barX = this.node.getChildByName('enemy_life_progress_bar').getChildByName('bar').x;
         this.node.getChildByName('enemy_life_progress_bar').getChildByName('bar').x = barX + (oldWidth - this.node.width) / 2
-
-
-        let progressBarHeight = this.node.getChildByName('enemy_life_progress_bar').height;
-        this.node.getChildByName('enemy_life_progress_bar').y = progressBarHeight / 2;
+        
+        this.node.getChildByName('enemy_life_progress_bar').y = this.node.width / 2;
 
         this.schedule(function(){
             this.room.spawnNewBullet(this.getNewBulletPosition(0), 'enemy');
