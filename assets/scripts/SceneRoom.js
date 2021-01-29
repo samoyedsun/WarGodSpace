@@ -168,6 +168,35 @@ cc.Class({
 
         this.backGroundList[0].y = 0;
         this.backGroundList[1].y = - (this.backGroundList[0].height / 2 + this.backGroundList[1].height / 2);
+        
+        this.passiveShare();
+    },
+
+    passiveShare() {
+        // 监听小程序右上角菜单的「转发」按钮
+        if (typeof wx === 'undefined') {
+            return;
+        }
+
+        // 显示当前页面的转发按钮
+        wx.showShareMenu({
+            success: (res) => {
+                console.log('开启被动转发成功！');
+            },
+            fail: (res) => {
+                console.log(res);
+                console.log('开启被动转发失败！');
+            }
+        });
+    
+        // 获取当前棋局oneChess信息，JSON.stringfy()后传入query
+        wx.onShareAppMessage(() => {
+            return {
+                title: '快来看看，我的太空战神!!!', 
+                imageUrl: cc.url.raw('img.png'),        // 分享图片要放在 wechatgame/res/raw-assets 路径下
+                query: 'shareMsg='+'分享卡片上所带的信息'  // query最大长度(length)为2048
+            }
+        });
     },
 
     handleSpawnNewBulletSchedule () {

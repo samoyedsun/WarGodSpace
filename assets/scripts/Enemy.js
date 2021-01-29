@@ -1,14 +1,6 @@
 var Bezier = require("Bezier");
 var FishPathConfig = require("FishPathConfig")
 
-var fish_to_path = [
-    1, 2, 1, 2, 1,
-    1, 2, 1, 2, 1,
-    1, 2, 1, 2, 1,
-    1, 2, 1, 2, 1,
-    2, 2, 2
-];
-
 cc.Class({
     extends: cc.Component,
 
