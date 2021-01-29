@@ -163,8 +163,8 @@ cc.Class({
     },
 
     start () {
-        this.schedule(this.handleSpawnNewBulletSchedule, 0.5);
-        this.schedule(this.handleSpawnNewEnemySchedule, 0.1); // player应该也是enemy
+        this.schedule(this.handleSpawnNewBulletSchedule, 0.1);
+        this.schedule(this.handleSpawnNewEnemySchedule, 0.8); // player应该也是enemy
 
         this.backGroundList[0].y = 0;
         this.backGroundList[1].y = - (this.backGroundList[0].height / 2 + this.backGroundList[1].height / 2);
@@ -172,17 +172,17 @@ cc.Class({
 
     handleSpawnNewBulletSchedule () {
         if (this.bulletSpriteFrameList.length == 86) {
-            this.spawnNewEnemy(this.getNewEnemyPosition());
-        }
-    },
-
-    handleSpawnNewEnemySchedule () {
-        if (this.enemySpriteFrameList.length == 23) {
             this.spawnNewBullet(this.player.getComponent('Player').getNewBulletPosition(-50), 'Player');
             this.spawnNewBullet(this.player.getComponent('Player').getNewBulletPosition(50), 'Player');
             if (this.biuAudio) {
                 cc.audioEngine.play(this.biuAudio, false, 0.5);
             }
+        }
+    },
+
+    handleSpawnNewEnemySchedule () {
+        if (this.enemySpriteFrameList.length == 23) {
+            this.spawnNewEnemy(this.getNewEnemyPosition());
         }
     },
 
