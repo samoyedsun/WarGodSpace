@@ -1,6 +1,7 @@
 {
-  "ver": "1.1.2",
+  "ver": "1.1.3",
   "uuid": "74dcaecd-8a0a-442a-b5ef-70fef535a600",
+  "importer": "folder",
   "isBundle": false,
   "bundleName": "scene",
   "priority": "10",

@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "14b9d167-24a8-4f22-89bb-f05209020f3f",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "FighterPlaneV2_preview_white": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "7fbb8c9c-7897-4977-ae26-01c6a36043ff",
+      "importer": "sprite-frame",
       "rawTextureUuid": "14b9d167-24a8-4f22-89bb-f05209020f3f",
       "trimType": "auto",
       "trimThreshold": 1,

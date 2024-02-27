@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "c01caed5-432f-48fb-8e9b-c025cf37e418",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "plane_game_num_daojishi": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "9e0fdab4-e1df-4c8b-8b6b-fcbb86b6dce6",
+      "importer": "sprite-frame",
       "rawTextureUuid": "c01caed5-432f-48fb-8e9b-c025cf37e418",
       "trimType": "auto",
       "trimThreshold": 1,

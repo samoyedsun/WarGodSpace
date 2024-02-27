@@ -1,6 +1,7 @@
 {
-  "ver": "1.1.2",
+  "ver": "1.1.3",
   "uuid": "e6a8a0b6-f95d-441c-a576-4ca7d04b58b5",
+  "importer": "folder",
   "isBundle": true,
   "bundleName": "plist",
   "priority": 1,

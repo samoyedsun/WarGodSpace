@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "208789ae-d4ea-48b6-9c88-83406328f9ca",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "plane_jmwx_num_account": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "e4fdb081-61ea-479d-8d5a-6e4f85b37599",
+      "importer": "sprite-frame",
       "rawTextureUuid": "208789ae-d4ea-48b6-9c88-83406328f9ca",
       "trimType": "auto",
       "trimThreshold": 1,

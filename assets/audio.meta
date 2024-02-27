@@ -1,6 +1,7 @@
 {
-  "ver": "1.1.2",
+  "ver": "1.1.3",
   "uuid": "df662242-de51-461b-8369-595e63a890c2",
+  "importer": "folder",
   "isBundle": true,
   "bundleName": "audio",
   "priority": 1,
