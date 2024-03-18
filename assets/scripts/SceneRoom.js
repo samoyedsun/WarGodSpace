@@ -116,7 +116,7 @@ cc.Class({
         });
     
         cc.assetManager.loadBundle('audio', (err, bundle) => {
-            bundle.load('bgm_space', cc.AudioClip, function (err, audioClip) {
+            bundle.load('bgm_space_jjkiller', cc.AudioClip, function (err, audioClip) {
                 self.bgmSpaceAudio = audioClip;
                 cc.audioEngine.play(self.bgmSpaceAudio, true, 1);
             });

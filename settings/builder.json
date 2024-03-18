@@ -1,5 +1,5 @@
 {
-  "title": "NewProject",
+  "title": "WarGodSpace",
   "packageName": "org.cocos2d.demo",
   "startScene": "1a390975-1d5b-4f58-8b6f-9b4db987556b",
   "excludeScenes": [],
@@ -27,7 +27,8 @@
   },
   "ios": {
     "REMOTE_SERVER_ROOT": "",
-    "packageName": "org.cocos2d.demo"
+    "packageName": "org.cocos2d.demo",
+    "ios_enable_jit": true
   },
   "mac": {
     "REMOTE_SERVER_ROOT": "",
@@ -49,5 +50,10 @@
     "scheme": "https",
     "skipRecord": false
   },
-  "appBundle": false
+  "appBundle": false,
+  "openharmony": {
+    "packageName": "com.cocos.openharmony",
+    "REMOTE_SERVER_ROOT": ""
+  },
+  "agreements": {}
 }

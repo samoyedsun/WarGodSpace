@@ -130,7 +130,7 @@ cc.Class({
 
     onCollisionEnter (other, self) {
         if (other.name.search('bullet') != -1 && other.node.getComponent('Bullet').kind == 'Player') {
-            let hurtBlood = 100 / (this.node.height + this.node.width + 2000);
+            let hurtBlood = 100 / ((this.node.height + this.node.width) * 5);
             let lifeProgress = this.node.getChildByName('enemy_life_progress_bar').getComponent(cc.ProgressBar).progress - hurtBlood;
             if (lifeProgress <= 0) {
                 this.onPicked();
